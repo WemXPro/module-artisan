@@ -5,8 +5,8 @@ return [
     'name' => 'Artisan',
     'icon' => 'https://imgur.png',
     'author' => 'GIGABAIT',
-    'version' => '1.0.0',
-    'wemx_version' => '1.9.1',
+    'version' => '1.0.5',
+    'wemx_version' => '>=2.0.0',
 
     'elements' => [
         'admin_menu' =>
@@ -97,5 +97,5 @@ return [
             'command' => 'subscriptions:check',
             'description' => 'Check and update subscription statuses',
         ]
-    ]
+    ],
 ];

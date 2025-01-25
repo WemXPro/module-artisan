@@ -2,18 +2,27 @@
 
 namespace Modules\Artisan\Providers;
 
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Database\Eloquent\Factory;
+use Modules\Artisan\Console\Commands\EnvEditorCommand;
 
 class ArtisanServiceProvider extends ServiceProvider
 {
     protected string $moduleName = 'Artisan';
     protected string $moduleNameLower = 'artisan';
 
+    protected array $commands = [
+        EnvEditorCommand::class
+    ];
+
     public function boot(): void
     {
+        if (\Cache::get('admin_debug', false) and str_contains(request()->path(), 'admin')) {
+            Config::set('app.debug', true);
+        }
         $this->registerConfig();
         $this->registerViews();
+        $this->commands($this->commands);
     }
 
     public function register(): void
