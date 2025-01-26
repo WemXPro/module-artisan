@@ -1,16 +1,16 @@
 {
     "name": "Artisan",
-    "alias": "artisan",
+    "type": "module",
     "description": "Artisan is a powerful console that allows you to interact with your application using the command line.",
+    "version": "1.0.5",
+    "author": "GIGABAIT",
+    "alias": "artisan",
     "keywords": [],
     "priority": 0,
     "providers": [
         "Modules\\Artisan\\Providers\\ArtisanServiceProvider"
     ],
     "files": [],
-    "type": "module",
     "icon": "https://imgur.png",
-    "author": "GIGABAIT",
-    "version": "1.0.5",
     "wemx_version": ">=2.0.0"
 }
